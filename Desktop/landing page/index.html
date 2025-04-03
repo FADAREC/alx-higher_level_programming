@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-900 via-purple-900 to-black text-white">
+    <header class="text-center py-20 bg-gradient-to-r from-indigo-700 to-purple-800 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <h1 id="title" class="text-5xl font-bold mb-4">Random Password Generator</h1>
+            <p id="subtitle" class="text-lg opacity-90">A simple tool to generate secure passwords</p>
+            <nav class="mt-6">
+                <ul class="flex justify-center space-x-6 text-lg">
+                    <li><a href="#about" class="hover:underline">About</a></li>
+                    <li><a href="#features" class="hover:underline">Features</a></li>
+                    <li><a href="#contact" class="hover:underline">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#" id="tryNowBtn" class="mt-6 inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 transition-all rounded-lg shadow-lg text-lg font-semibold">Try It Now</a>
+        </div>
+    </header>
+    <main class="py-20">
+        <section id="about" class="text-center max-w-3xl mx-auto py-10">
+            <h2 class="text-4xl font-bold mb-4">About</h2>
+            <p class="text-lg opacity-80">This tool generates unique, unbreakable passwords, helping you secure all your online accounts with ease.</p>
+        </section>
+        <section id="features" class="text-center py-16 bg-gray-900 visible">
+            <h2 class="text-4xl font-bold mb-8">Features</h2>
+            <div class="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:scale-105 transition-all feature-box">
+                    <img src="customization.PNG" alt="Customizable Passwords" class="w-32 mx-auto mb-4 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-2">Customizable Passwords</h3>
+                    <p class="text-lg opacity-80">Generate passwords with specific lengths and character types.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:scale-105 transition-all feature-box">
+                    <img src="copyfeature.PNG" alt="Copy to Clipboard" class="w-32 mx-auto mb-4 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-2">Copy to Clipboard</h3>
+                    <p class="text-lg opacity-80">Easily copy passwords with a single click.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:scale-105 transition-all feature-box">
+                    <img src="customization.PNG" alt="Secure & Reliable" class="w-32 mx-auto mb-4 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-2">Secure & Reliable</h3>
+                    <p class="text-lg opacity-80">Utilizes strong encryption algorithms for security.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="text-center py-16">
+            <h2 class="text-4xl font-bold mb-4">Contact</h2>
+            <p class="text-lg opacity-80">Email: contact@example.com</p>
+        </section>
+    </main>
+    <script>
+        gsap.from("#title", { duration: 1.2, y: -50, opacity: 0, ease: "bounce.out", clearProps: "all" });
+        gsap.from("#subtitle", { duration: 1.5, opacity: 0, delay: 0.5, clearProps: "all" });
+        gsap.from("#tryNowBtn", { duration: 1, scale: 0, opacity: 0, delay: 1, clearProps: "all" });
+        gsap.from(".feature-box", { duration: 1, opacity: 0, stagger: 0.3, y: 50, ease: "power2.out", clearProps: "all"});
+        gsap.from(".feature-box img", { duration: 1, opacity: 0, scale: 0.8, stagger: 0.3, clearProps: "all" });
+    </script>
+    <div id="modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-gray-800 p-8 rounded-lg shadow-lg text-center">
+            <h2 class="text-3xl font-bold mb-4">Why Use This?</h2>
+            <p class="text-lg mb-4">Protect yourself with randomly generated, unbreakable passwords!</p>
+            <button id="closeModal" class="mt-4 px-6 py-3 bg-red-600 hover:bg-red-700 rounded-lg">Close</button>
+        </div>
+    </div>    
+</body>
+</html>
